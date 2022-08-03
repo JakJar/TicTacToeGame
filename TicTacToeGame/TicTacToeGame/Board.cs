@@ -12,7 +12,7 @@ namespace TicTacToeGame
 
         public Board()
         {
-            _gameBoard = new char[9];
+            _gameBoard = new char[]{'1', '2', '3', '4', '5', '6', '7', '8', '9'};
         }
 
         public void MarkField(int position, char mark)
