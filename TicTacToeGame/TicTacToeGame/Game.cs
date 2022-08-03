@@ -7,7 +7,7 @@
 
         public Game()
         {
-            board= new Board();
+            board = new Board();
             _moves = 0;
         }
 
@@ -19,9 +19,12 @@
             {
                 if (!int.TryParse(Console.ReadLine(), out input))
                 {
+                    Console.WriteLine("Please enter only numbers!");
+                }
+                else if (input is > 9 or < 1)
+                {
                     Console.WriteLine("Please enter valid number!");
                 }
-
             } while (input is > 9 or < 1);
 
             return input;
