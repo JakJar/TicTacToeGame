@@ -41,15 +41,14 @@ namespace TicTacToeGame
         public void DisplayBoard(string boardString)
         {
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}   1", boardString[0], boardString[1], boardString[2]);
+            Console.WriteLine("  {0}  |  {1}  |  {2}", boardString[0], boardString[1], boardString[2]);
             Console.WriteLine("_____|_____|_____ ");
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}   2", boardString[3], boardString[4], boardString[5]);
+            Console.WriteLine("  {0}  |  {1}  |  {2}", boardString[3], boardString[4], boardString[5]);
             Console.WriteLine("_____|_____|_____ ");
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}   3", boardString[6], boardString[7], boardString[8]);
+            Console.WriteLine("  {0}  |  {1}  |  {2}", boardString[6], boardString[7], boardString[8]);
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  A     B     C  ");
         }
     }
 }
