@@ -50,11 +50,8 @@
             return 'O';
         }
 
-        public void HorizontalWin()
+        public void HorizontalWin(char[] players, char[] gameBoard)
         {
-            char[] players = { 'X', 'O' };
-            char[] gameBoard = board.GetGameBoard();
-
             foreach (var player in players)
             {
                 if ((gameBoard[0] == player && gameBoard[1] == player && gameBoard[2] == player) ||
@@ -66,11 +63,8 @@
             }
         }
 
-        public void VerticalWin()
+        public void VerticalWin(char[] players, char[] gameBoard)
         {
-            char[] players = { 'X', 'O' };
-            char[] gameBoard = board.GetGameBoard();
-
             foreach (char player in players)
             {
                 if ((gameBoard[0] == player && gameBoard[3] == player && gameBoard[6] == player) ||
@@ -82,11 +76,8 @@
             }
         }
 
-        public void DiagonalWin()
+        public void DiagonalWin(char[] players, char[] gameBoard)
         {
-            char[] players = { 'X', 'O' };
-            char[] gameBoard = board.GetGameBoard();
-
             foreach (char player in players)
             {
                 if ((gameBoard[0] == player && gameBoard[4] == player && gameBoard[8] == player) ||
@@ -95,6 +86,16 @@
                     Console.WriteLine($"Player {player} win diagonally!");
                 }
             }
+        }
+
+        public void CheckForWin()
+        {
+            char[] players = { 'X', 'O' };
+            char[] gameBoard = board.GetGameBoard();
+
+            HorizontalWin(players, gameBoard);
+            VerticalWin(players, gameBoard);
+            DiagonalWin(players, gameBoard);
         }
 
         public void Play()
