@@ -18,5 +18,21 @@ namespace TicTacToeGame
             board= new Board();
             _moves = 0;
         }
+
+        public int GetValidPlayerInput()
+        {
+            int input;
+
+            do
+            {
+                if (!int.TryParse(Console.ReadLine(), out input))
+                {
+                    Console.WriteLine("Please enter valid number!");
+                }
+
+            } while (input is > 9 or < 1);
+
+            return input;
+        }
     }
 }
