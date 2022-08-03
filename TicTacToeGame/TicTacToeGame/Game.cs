@@ -46,5 +46,26 @@
 
             return 'O';
         }
+
+        public void Play()
+        {
+            Console.Clear();
+            board.DisplayBoard(board.ToString());
+            while (_moves < 9)
+            {
+                int input = GetValidPlayerInput();
+                if (CheckMovementPossibility(input))
+                {
+                    Console.Clear();
+                    board.MarkField(PositionConverter(input), XOrO());
+                    board.DisplayBoard(board.ToString());
+                    _moves++;
+                }
+                else
+                {
+                    Console.WriteLine("This field is taken!");
+                }
+            }
+        }
     }
 }
