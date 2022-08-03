@@ -39,5 +39,10 @@ namespace TicTacToeGame
         {
             return board.ToString().Contains(Convert.ToString(input));
         }
+
+        public int PositionConverter(int input)
+        {
+            return input - 1;
+        }
     }
 }
