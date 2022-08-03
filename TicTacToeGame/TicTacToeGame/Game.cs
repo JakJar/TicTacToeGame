@@ -44,5 +44,15 @@ namespace TicTacToeGame
         {
             return input - 1;
         }
+
+        public char XOrO()
+        {
+            if (_moves % 2 == 0)
+            {
+                return 'X';
+            }
+
+            return 'O';
+        }
     }
 }
