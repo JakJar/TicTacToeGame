@@ -19,5 +19,23 @@ namespace TicTacToeGame
         {
             _gameBoard[position] = mark;
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < _gameBoard.Length; i++)
+            {
+                if (_gameBoard[i] == 0)
+                {
+                    sb.Append(" ");
+                }
+                else
+                {
+                    sb.Append(_gameBoard[i]);
+                }
+            }
+
+            return sb.ToString();
+        }
     }
 }
