@@ -11,6 +11,8 @@ namespace TicTacToeGame
             _gameBoard = new char[]{'1', '2', '3', '4', '5', '6', '7', '8', '9'};
         }
 
+        public char[] GetGameBoard() => _gameBoard;
+
         public void MarkField(int position, char mark)
         {
             _gameBoard[position] = mark;
