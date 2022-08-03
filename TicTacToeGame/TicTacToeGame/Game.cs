@@ -34,5 +34,10 @@ namespace TicTacToeGame
 
             return input;
         }
+
+        public bool CheckMovementPossibility(int input)
+        {
+            return board.ToString().Contains(Convert.ToString(input));
+        }
     }
 }
