@@ -110,7 +110,7 @@
         {
             Console.Clear();
             board.DisplayBoard(board.ToString());
-            while (_moves < 9)
+            while (_moves < 9 && !CheckForWin())
             {
                 int input = GetValidPlayerInput();
                 if (CheckMovementPossibility(input))
