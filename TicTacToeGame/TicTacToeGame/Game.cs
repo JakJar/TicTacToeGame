@@ -50,7 +50,7 @@
             return 'O';
         }
 
-        public void HorizontalWin(char[] players, char[] gameBoard)
+        public bool HorizontalWin(char[] players, char[] gameBoard)
         {
             foreach (var player in players)
             {
@@ -59,11 +59,14 @@
                     (gameBoard[6] == player && gameBoard[7] == player && gameBoard[8] == player))
                 {
                     Console.WriteLine($"Player {player} win horizontally!");
+                    return true;
                 }
             }
+
+            return false;
         }
 
-        public void VerticalWin(char[] players, char[] gameBoard)
+        public bool VerticalWin(char[] players, char[] gameBoard)
         {
             foreach (char player in players)
             {
@@ -72,11 +75,14 @@
                     (gameBoard[2] == player && gameBoard[5] == player && gameBoard[8] == player))
                 {
                     Console.WriteLine($"Player {player} win vertically!");
+                    return true;
                 }
             }
+
+            return false;
         }
 
-        public void DiagonalWin(char[] players, char[] gameBoard)
+        public bool DiagonalWin(char[] players, char[] gameBoard)
         {
             foreach (char player in players)
             {
@@ -84,18 +90,20 @@
                     (gameBoard[6] == player && gameBoard[4] == player && gameBoard[2] == player))
                 {
                     Console.WriteLine($"Player {player} win diagonally!");
+                    return true;
                 }
             }
+
+            return false;
         }
 
-        public void CheckForWin()
+        public bool CheckForWin()
         {
             char[] players = { 'X', 'O' };
             char[] gameBoard = board.GetGameBoard();
 
-            HorizontalWin(players, gameBoard);
-            VerticalWin(players, gameBoard);
-            DiagonalWin(players, gameBoard);
+            return HorizontalWin(players, gameBoard) || VerticalWin(players, gameBoard) ||
+                   DiagonalWin(players, gameBoard);
         }
 
         public void Play()
